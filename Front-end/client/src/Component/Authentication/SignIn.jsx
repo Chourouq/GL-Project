@@ -3,11 +3,15 @@ import bg from "../../assets/welcome.svg";
 import { BsPerson, BsUnlock } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { FaUserCircle, FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
+import axios from 'axios';
 
 function SignIn() {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
-
+    const [formData, setFormData] = useState({
+        email: '',
+        password: ''
+    });
     const signInWithGoogle = () => {
         console.log("Sign in with Google");
         // Add your Google sign-in logic here for the back end team
@@ -16,21 +20,43 @@ function SignIn() {
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+    };
+
+    const handleSignIn = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post('http://localhost:8000/login', formData);
+
+            if (response.status === 200) {
+                console.log('Login successful');
+                // Redirect or perform actions for successful login
+                navigate('/');
+            }
+        } catch (error) {
+            console.error('Login failed:', error);
+            // Handle login failure (display error message, etc.)
+        }
+    };
 
     return (
         <div className="h-screen w-full bg-center bg-cover" style={{ backgroundImage: `url(${bg})` }}>
             <div className="flex justify-center items-center h-screen px-2">
-                <form className="max-w-lg w-full flex flex-col border-t-2 justify-center items-center shadow-lg bg-white rounded-3xl p-4">
+                <form onSubmit={handleSignIn} className="max-w-lg w-full flex flex-col border-t-2 justify-center items-center shadow-lg bg-white rounded-3xl p-4">
                     <h1 className="text-blue-800 text-3xl font-bold pt-3">Connexion</h1>
                     <FaUserCircle size={60} className="text-blue-900 my-6" />
                     <div className="mb-4 w-full relative">
-                        <label htmlFor="fullName" className="absolute top-2 left-4 text-md text-blue-900">
+                        <label htmlFor="email" className="absolute top-2 left-4 text-md text-blue-900">
                             <BsPerson className="inline-block mr-2" />
                         </label>
                         <input
-                            type="text"
-                            id="fullName"
-                            name="fullName"
+                            type="email"
+                            id="email"
+                            name="email"
+                            onChange={handleInputChange}
                             className="font-medium shadow-lg border-t-2 py-2 pl-14 pr-12 rounded-2xl w-full"
                             placeholder="L'adresse e-mail"
                         />
@@ -44,6 +70,7 @@ function SignIn() {
                                 type={showPassword ? "text" : "password"}
                                 id="password"
                                 name="password"
+                                onChange={handleInputChange}
                                 className="font-medium shadow-lg border-t-2 py-2 pl-14 pr-12 rounded-2xl w-full"
                                 placeholder="Mot de passe"
                             />
