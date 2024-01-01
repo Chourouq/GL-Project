@@ -63,7 +63,7 @@ function SignIn() {
                     >
                         Connexion
                     </button>
-                    {/* Connect with Google option */}
+                    {/* Connect with Google */}
                     <div id="google-sign-in" className="mt-3">
                         <p className="text-md mb-2 text-center">Ou connectez-vous avec</p>
                         <button
