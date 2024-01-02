@@ -4,6 +4,7 @@ import { BsPerson, BsUnlock } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { FaUserCircle, FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
 
+
 function SignIn() {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
@@ -15,6 +16,9 @@ function SignIn() {
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
+    };
+    const goToAvocat = () => {
+        navigate('/Avocat');
     };
 
     return (
@@ -55,11 +59,11 @@ function SignIn() {
                             </span>
                         </div>
                     </div>
-                    <span className="text-sm cursor-pointer font-medium underline"onClick={() => navigate('/ForgetPassword')}>Mot de passe oublié ?</span>
+                    <span className="text-sm cursor-pointer font-medium underline" onClick={() => navigate('/ForgetPassword')}>Mot de passe oublié ?</span>
                     <span className="text-sm font-medium">Vous n'avez pas de compte? <span className="text-blue-900 cursor-pointer font-bold" onClick={() => navigate('/Sign-up')}>Inscrivez-vous</span></span>
                     <button
                         type="submit"
-                        className="cursor-pointer font-medium bg-blue-900 mt-4 text-center text-[12px] text-white rounded-full py-3 px-6  duration-300 hover:scale-105"
+                        className="cursor-pointer font-medium bg-blue-900 mt-4 text-center text-[12px] text-white rounded-full py-3 px-6  duration-300 hover:scale-105" onClick={goToAvocat}
                     >
                         Connexion
                     </button>

@@ -3,7 +3,7 @@ import L from 'leaflet';
 
 function Map() {
   useEffect(() => {
-    // Replace the following with actual coordinates for the lawyer's location
+    // Replace the following with actual coordinates for the Lawyer's location
     const lawyerLocation = { lat: 37.7749, lng: -122.4194 };
 
     // Create the map
@@ -14,7 +14,7 @@ function Map() {
       attribution: '&copy; OpenStreetMap contributors',
     }).addTo(map);
 
-    // Marker for the lawyer's location
+    // Marker for the Lawyer's location
     L.marker(lawyerLocation).addTo(map)
       .bindPopup('Lawyer Location')
       .openPopup();
