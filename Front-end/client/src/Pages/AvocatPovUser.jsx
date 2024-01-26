@@ -6,7 +6,7 @@ import Experiences from "../Component/Lawyer/Experiences.jsx";
 import Reviews from "../Component/Lawyer/Reviews.jsx";
 import Contact from '../Component/Lawyer/Contact.jsx';
 //profile avocat of the user (with the functionality of reservation included)
-function Avocat() {
+function AvocatPovUser() {
     return (
         <div>
             <NavBarUser/>
@@ -18,4 +18,4 @@ function Avocat() {
         </div>
     );
 }
-export default Avocat;
+export default  AvocatPovUser;
