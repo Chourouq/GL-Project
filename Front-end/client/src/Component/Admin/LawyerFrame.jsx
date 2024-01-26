@@ -63,4 +63,4 @@ const LawyerFrame = () => {
   );
 };
 
-export default ProfileHeader;
+export default LawyerFrame;

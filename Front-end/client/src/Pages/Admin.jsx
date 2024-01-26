@@ -1,12 +1,13 @@
-import NavBarAawyer from '../Component/Admin/NavBarAdmin.jsx';
+
 import LawyerFrame from "../Component/Admin/LawyerFrame.jsx";
 import React from 'react';
-function SAdmin() {
+
+function Admin() {
     return (
         <div>
-           
+
             <LawyerFrame/>
-           
+
         </div>
     );
 }
