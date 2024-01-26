@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarker, faBuilding, faPhone } from '@fortawesome/free-solid-svg-icons';
 import user1 from "../../assets/user1.png";
-import EditProfile from "./EditProfile.jsx"; // Assuming you have an EditProfile component
-
+import EditProfile from "./EditProfile.jsx"; 
+//profile header with the update profile button
 const ProfileHeader = () => {
   const [isEditProfileVisible, setIsEditProfileVisible] = useState(false);
 
   const profileData = {
     profilePicture: user1,
-    firstName: 'John',
-    lastName: 'Doe',
+    firstName: 'Salim',
+    lastName: 'Laalami',
     lawSpecialty: 'Criminal Defense',
     address: '123 Main St, Cityville',
     phoneNumber: '+123 456 789',

@@ -26,7 +26,7 @@ function SignIn() {
         } else if (enteredEmail.includes("/avocat")) {
             navigate('/Avocat');
         } else if (enteredEmail.includes("/admin")) {
-            navigate('/admin-dashboard');
+            navigate('/Admin');
         } else {
             // Handle other cases or show an error message
             console.error("Invalid email format");

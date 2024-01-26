@@ -4,8 +4,8 @@ import Skills from "../Component/Lawyer/Skills.jsx";
 import ProfileHeader from "../Component/User/ProfileHeader.jsx";
 import Experiences from "../Component/Lawyer/Experiences.jsx";
 import Reviews from "../Component/Lawyer/Reviews.jsx";
-import Contact from '../Component/Lawyer/Contact.jsx'
-
+import Contact from '../Component/Lawyer/Contact.jsx';
+//profile avocat of the user (with the functionality of reservation included)
 function Avocat() {
     return (
         <div>
