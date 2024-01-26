@@ -142,7 +142,7 @@ const Welcome = () => {
                         type="text"
                         value={otherInput}
                         onChange={(e) => handleOtherInputChange(e.target.value)}
-                        placeholder="Autre"
+                        placeholder="Nom"
                         className="py-2 px-4 font-medium border-2 border-blue-900 rounded-full focus:outline-none focus:ring focus:border-blue-300 w-full"
                     />
                     <span className="absolute p-2 right-3 top-[6px] text-blue-900">
