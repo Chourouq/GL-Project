@@ -4,10 +4,11 @@ import { BsPerson, BsUnlock } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import { FaUserCircle, FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
 
-
 function SignIn() {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
+    const [enteredEmail, setEnteredEmail] = useState('');
+    const [enteredPassword, setEnteredPassword] = useState('');
 
     const signInWithGoogle = () => {
         console.log("Sign in with Google");
@@ -17,8 +18,19 @@ function SignIn() {
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
+
     const goToAvocat = () => {
-        navigate('/Avocat');
+        // Check if the entered email contains specific strings
+        if (enteredEmail.includes("/user")) {
+            navigate('/User');
+        } else if (enteredEmail.includes("/avocat")) {
+            navigate('/Avocat');
+        } else if (enteredEmail.includes("/admin")) {
+            navigate('/admin-dashboard');
+        } else {
+            // Handle other cases or show an error message
+            console.error("Invalid email format");
+        }
     };
 
     return (
@@ -37,6 +49,7 @@ function SignIn() {
                             name="fullName"
                             className="font-medium shadow-lg border-t-2 py-2 pl-14 pr-12 rounded-2xl w-full"
                             placeholder="L'adresse e-mail"
+                            onChange={(e) => setEnteredEmail(e.target.value)}
                         />
                     </div>
                     <div className="mb-4 w-full relative">
@@ -50,6 +63,7 @@ function SignIn() {
                                 name="password"
                                 className="font-medium shadow-lg border-t-2 py-2 pl-14 pr-12 rounded-2xl w-full"
                                 placeholder="Mot de passe"
+                                onChange={(e) => setEnteredPassword(e.target.value)}
                             />
                             <span
                                 className="absolute top-3 right-4 text-center text-md text-blue-900 cursor-pointer"
@@ -62,7 +76,7 @@ function SignIn() {
                     <span className="text-sm cursor-pointer font-medium underline" onClick={() => navigate('/ForgetPassword')}>Mot de passe oublié ?</span>
                     <span className="text-sm font-medium">Vous n'avez pas de compte? <span className="text-blue-900 cursor-pointer font-bold" onClick={() => navigate('/Sign-up')}>Inscrivez-vous</span></span>
                     <button
-                        type="submit"
+                        type="button"
                         className="cursor-pointer font-medium bg-blue-900 mt-4 text-center text-[12px] text-white rounded-full py-3 px-6  duration-300 hover:scale-105" onClick={goToAvocat}
                     >
                         Connexion
