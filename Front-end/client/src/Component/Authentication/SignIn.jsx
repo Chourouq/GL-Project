@@ -22,7 +22,7 @@ function SignIn() {
     const goToAvocat = () => {
         // Check if the entered email contains specific strings
         if (enteredEmail.includes("/user")) {
-            navigate('/User');
+            navigate('/');
         } else if (enteredEmail.includes("/avocat")) {
             navigate('/Avocat');
         } else if (enteredEmail.includes("/admin")) {
