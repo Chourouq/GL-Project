@@ -1,23 +1,21 @@
-
 import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarker, faBuilding, faPhone } from '@fortawesome/free-solid-svg-icons';
 import user1 from "../../assets/user2.png";
-import Appointment from "./Appointment.jsx";
-
-const ProfileHeader = () => {
-  const [isAppointmentVisible, setIsAppointmentVisible] = useState(false);
+import { useNavigate } from 'react-router-dom';
+const SearchResult1 = () => {
+  
   const profileData = {
-    profilePicture: 'https://avocatalgerien.com/wp-content/uploads/2014/12/20141010_115537-e1426203766837.jpg',
+    profilePicture: 'https://avocatalgerien.com/wp-content/uploads/2016/06/avocat.png',
     firstName: 'MAITRE MOHAMMED',
-    lastName: 'DIF',
+    lastName: 'SLIMANI',
     lawSpecialty: 'Droit administratif',
-    address: 'Hassi Bahbah 17000, Djelfa, Algérie',
-    phoneNumber: '0542296357',
-    cabinet: '3.028468',
-    ranking: 4,
+    address: 'Djelfa',
+    phoneNumber: '0673707790',
+    cabinet: '-0.633738',
+    ranking: 3,
   };
-
+  const navigate = useNavigate();
   const renderStars = (ranking) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
@@ -32,12 +30,12 @@ const ProfileHeader = () => {
     }
     return stars;
 };
-const appoint =()=>{
-  setIsAppointmentVisible(true);
-}
 
+const goToAvocat = () => {
+    navigate("/AvocatPovUser");
+};
   return (
-    <div className="profile-container flex border-2 border-[#EAB84C] text-black-500 p-8 m-6 mt-16" id={'topPage'}>
+    <div className="profile-container flex border-2 border-[#EAB84C] text-black-500 p-8 m-6 mt-16">
       {/* User Image Rectangle */}
       <div className="profile-container ">
         <div className="user-image-container ">
@@ -79,21 +77,14 @@ const appoint =()=>{
        {/* Button to the right of the profile container */}
        <div className='container-buuton mt-auto ml-auto' >
         <div className="button container mx-2 cursor-pointer bg-blue-900 text-[16px] text-white font-bold text-center rounded-full py-4 px-4 shadow-xl hover:scale-105 "
-        onClick={appoint}
+        onClick={goToAvocat}
        >
-        Prenez Rendez-vous
+        Voir Plus
        </div>
-       {isAppointmentVisible &&
-                    <div
-                        className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-[999] px-4"
-                    >
-                        <div className="bg-gray-900 bg-opacity-50 absolute inset-0"></div>
-                        <Appointment close={()=>setIsAppointmentVisible(false)} />
-                    </div>
-                }
+      
       </div>
     </div>
   );
 };
 
-export default ProfileHeader;
+export default SearchResult1;

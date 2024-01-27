@@ -26,6 +26,7 @@ const NavbarUser = () => {
       className={`fixed w-full bg-white left-0 top-0 z-[999] ${
         sticky ? "bg-white/60  text-gray-900" : "text-white"
       }`}
+      id="topTop"
     >
       <div className="flex items-center justify-between">
         <div className="mx-7">

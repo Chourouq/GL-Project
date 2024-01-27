@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import 'tailwindcss/tailwind.css';
 import { BsCalendar, BsPerson, BsPhone, BsChat, BsClock } from 'react-icons/bs';
 import { FaTimes } from 'react-icons/fa';
 
+
 const Appointment = ({ close }) => {
     const [selectedDate, setSelectedDate] = useState(null);
     const [selectedPeriod, setSelectedPeriod] = useState('');
     const [disabledPeriods, setDisabledPeriods] = useState([]);
-
+    const navigate = useNavigate();
     const periods = ['8-10','10-12','14-16'];
 
     const handleSubmit = (event) => {
@@ -149,8 +151,9 @@ const Appointment = ({ close }) => {
                 <button
                     type="submit"
                     className="cursor-pointer font-medium bg-blue-900 text-center text-[12px] text-white rounded-full py-3 px-6 hover:scale-105"
+                    onClick={()=>navigate(0)}
                 >
-                    Planifier un rendez-vous
+                    Planifier un rendez-vous 
                 </button>
             </form>
         </div>

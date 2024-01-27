@@ -3,10 +3,7 @@ import React from 'react';
 function Experiences() {
   
   const experiences = [
-    '10+ years of practice in Criminal Defense',
-    'Successful representation in high-profile cases',
-    'Expertise in negotiation and dispute resolution',
-    'Member of Bar Association',
+    'Avocat expérimenté offrant des conseils juridiques personnalisés',
   ];
 
   return (

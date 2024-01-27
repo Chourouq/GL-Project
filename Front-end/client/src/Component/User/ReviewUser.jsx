@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
-
 function ReviewUser() {
     const [rating, setRating] = useState(0);
     const [comment, setComment] = useState('');
@@ -18,10 +17,12 @@ function ReviewUser() {
         // You can send this data to your backend or perform any other necessary actions.
         console.log('Rating:', rating);
         console.log('Comment:', comment);
+        
     };
 
     return (
         <div className="bg-white p-4 mb-4 rounded-md shadow-md">
+            <h3 className="text-4xl text-[#013656] font-bold py-8 ">Votre Avis</h3>
             <h2 className="text-xl font-semibold mb-2 mt-3 text-[#013656]">Laisser un avis</h2>
 
             {/* 5-Star Rating System */}
@@ -55,6 +56,7 @@ function ReviewUser() {
             </div>
 
             {/* Submit Button */}
+            <a href="#topPage">
             <button
                 type="submit"
                 onClick={handleSubmit}
@@ -62,6 +64,7 @@ function ReviewUser() {
             >
                 Submit
             </button>
+            </a>
         </div>
     );
 }

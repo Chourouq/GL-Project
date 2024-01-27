@@ -6,13 +6,13 @@ import { useNavigate } from 'react-router-dom';
 const SearchResult = () => {
   
   const profileData = {
-    profilePicture: user1,
-    firstName: 'Jamal',
-    lastName: 'Lekhel',
-    lawSpecialty: 'Criminal Defense',
-    address: '123 Main St, Cityville',
-    phoneNumber: '+123 456 789',
-    cabinet: 'cabinet Law For All',
+    profilePicture: 'https://avocatalgerien.com/wp-content/uploads/2014/12/20141010_115537-e1426203766837.jpg',
+    firstName: 'MAITRE MOHAMMED',
+    lastName: 'DIF',
+    lawSpecialty: 'Droit administratif',
+    address: 'Hassi Bahbah 17000, Djelfa, Algérie',
+    phoneNumber: '0542296357',
+    cabinet: '3.028468',
     ranking: 4,
   };
   const navigate = useNavigate();
