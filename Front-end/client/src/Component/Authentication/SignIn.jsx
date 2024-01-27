@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import { FaUserCircle, FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
 import axios from 'axios';
 
+
+
 function SignIn() {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
@@ -12,6 +14,9 @@ function SignIn() {
         email: '',
         password: ''
     });
+    const [enteredEmail, setEnteredEmail] = useState('');
+    const [enteredPassword, setEnteredPassword] = useState('');
+
     const signInWithGoogle = () => {
         console.log("Sign in with Google");
         // Add your Google sign-in logic here for the back end team
@@ -20,6 +25,7 @@ function SignIn() {
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -34,13 +40,14 @@ function SignIn() {
             if (response.status === 200) {
                 console.log('Login successful');
                 // Redirect or perform actions for successful login
-                navigate('/');
+                navigate('/avocat');
             }
         } catch (error) {
             console.error('Login failed:', error);
             // Handle login failure (display error message, etc.)
-        }
-    };
+        }; 
+    };    
+
 
     return (
         <div className="h-screen w-full bg-center bg-cover" style={{ backgroundImage: `url(${bg})` }}>
@@ -59,6 +66,7 @@ function SignIn() {
                             onChange={handleInputChange}
                             className="font-medium shadow-lg border-t-2 py-2 pl-14 pr-12 rounded-2xl w-full"
                             placeholder="L'adresse e-mail"
+                           
                         />
                     </div>
                     <div className="mb-4 w-full relative">
@@ -86,8 +94,7 @@ function SignIn() {
                     <span className="text-sm font-medium">Vous n'avez pas de compte? <span className="text-blue-900 cursor-pointer font-bold" onClick={() => navigate('/Sign-up')}>Inscrivez-vous</span></span>
                     <button
                         type="submit"
-                        className="cursor-pointer font-medium bg-blue-900 mt-4 text-center text-[12px] text-white rounded-full py-3 px-6  duration-300 hover:scale-105"
-                    >
+                        className="cursor-pointer font-medium bg-blue-900 mt-4 text-center text-[12px] text-white rounded-full py-3 px-6  duration-300 hover:scale-105"      >
                         Connexion
                     </button>
                     {/* Connect with Google option */}
@@ -106,6 +113,6 @@ function SignIn() {
             </div>
         </div>
     );
-}
+};
 
 export default SignIn;
