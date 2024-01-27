@@ -11,6 +11,7 @@ const NavbarUser = () => {
     { name: "Accueil", link: "/" },
     { name: "À propos de nous", link: "/Splash/Aboutus" },
     { name: "Contact", link: "/Splash/contact" },
+    { name: "Log out", link: "/" },
   ];
 
   useEffect(() => {

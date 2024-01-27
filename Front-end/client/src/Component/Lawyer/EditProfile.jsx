@@ -151,7 +151,7 @@ const EditProfile = ({ close }) => {
           <div className="mb-4">
             {/* Field 4: Experience */}
             <label htmlFor="experience" className="block text-gray-700 font-bold mb-2">
-              Experience (Separate items with a new line)
+              Experience (Chaque ligne est une expérience)
             </label>
             <textarea
               id="experience"
