@@ -5,10 +5,10 @@ import { useNavigate } from 'react-router-dom';
 const LawyerFrame = () => {
   const navigate = useNavigate();
   const profileData = {
-    profilePicture:"https://avocatalgerien.com/wp-content/uploads/2023/11/IMG-f01dc49b8ba035cb57d919727f372d14-V.jpg",
-    firstName: 'MAITRE ABDELHAFID',
-    lastName: 'SAIGHI',
-    lawSpecialty: "Droit de l'environnement",
+    profilePicture: "https://avocatalgerien.com/wp-content/uploads/2014/12/avocat001.jpg",
+    firstName: 'MAITRE CHERIBET',
+    lastName: 'BADREDDINE',
+    lawSpecialty: "Droit de l'immobilier",
    
   };
 
