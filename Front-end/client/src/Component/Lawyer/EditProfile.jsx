@@ -21,7 +21,7 @@ const EditProfile = ({ close }) => {
   };
 
   const handleSkip = () => {
-    const fieldOrder = ['firstName', 'address', 'cabinet', 'phoneNumber'];
+    const fieldOrder = ['firstName', 'address', 'cabinet','experience', 'phoneNumber'];
     const currentIndex = fieldOrder.indexOf(currentField);
     const nextField = fieldOrder[currentIndex + 1];
 
@@ -146,10 +146,46 @@ const EditProfile = ({ close }) => {
             </div>
           </div>
         )}
+       
+       {currentField === 'experience' && (
+          <div className="mb-4">
+            {/* Field 4: Experience */}
+            <label htmlFor="experience" className="block text-gray-700 font-bold mb-2">
+              Experience (Separate items with a new line)
+            </label>
+            <textarea
+              id="experience"
+              name="experience"
+              value={formData.experience}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded-md p-2"
+              rows="4"
+              placeholder="Enter multiple experiences, each on a new line"
+            ></textarea>
+            {/* "Skip" and "Update" buttons for Field 4 */}
+            <div className="flex justify-end mt-2">
+              <button
+                type="button"
+                onClick={handleSkip}
+                className="mr-2 px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 transition duration-300"
+              >
+                Skip
+              </button>
+              <button
+                type="submit"
+                className="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-700 transition duration-300"
+              >
+                Update
+              </button>
+            </div>
+          </div>
+        )}
+
+       
 
         {currentField === 'phoneNumber' && (
           <div className="mb-4">
-            {/* Field 4: Phone Number */}
+            {/* Field 5: Phone Number */}
             <label htmlFor="phoneNumber" className="block text-gray-700 font-bold mb-2">
               Phone Number
             </label>

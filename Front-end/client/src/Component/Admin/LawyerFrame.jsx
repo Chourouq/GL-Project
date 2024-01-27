@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import user1 from "../../assets/user1.png";
+import user3 from "../../assets/user3.png";
 import { useNavigate } from 'react-router-dom';
 
 //lawyer header with the "Visiter" and "Supprimer" buttons
 const LawyerFrame = () => {
   const navigate = useNavigate();
   const profileData = {
-    profilePicture: user1,
-    firstName: 'John',
-    lastName: 'Doe',
+    profilePicture: user3,
+    firstName: 'Salima',
+    lastName: 'labili',
     lawSpecialty: 'Criminal Defense',
    
   };
