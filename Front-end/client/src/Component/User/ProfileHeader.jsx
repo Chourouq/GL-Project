@@ -2,15 +2,15 @@
 import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarker, faBuilding, faPhone } from '@fortawesome/free-solid-svg-icons';
-import user1 from "../../assets/user1.png";
+import user1 from "../../assets/user2.png";
 import Appointment from "./Appointment.jsx";
 
 const ProfileHeader = () => {
   const [isAppointmentVisible, setIsAppointmentVisible] = useState(false);
   const profileData = {
     profilePicture: user1,
-    firstName: 'John',
-    lastName: 'Doe',
+    firstName: 'Hakim',
+    lastName: 'Jamal',
     lawSpecialty: 'Criminal Defense',
     address: '123 Main St, Cityville',
     phoneNumber: '+123 456 789',

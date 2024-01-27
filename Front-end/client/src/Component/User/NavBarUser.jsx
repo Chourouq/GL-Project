@@ -8,9 +8,10 @@ const NavbarUser = () => {
   const [sticky, setSticky] = useState(false);
   const [open, setOpen] = useState(false);
   const menuLinks = [
-    { name: "Accueil", link: "/Splash/Welcome.jsx" },
+    { name: "Accueil", link: "/" },
     { name: "À propos de nous", link: "/Splash/Aboutus" },
     { name: "Contact", link: "/Splash/contact" },
+    { name: "Log out", link: "/" },
   ];
 
   useEffect(() => {

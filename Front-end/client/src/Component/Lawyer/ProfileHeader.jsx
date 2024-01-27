@@ -16,6 +16,8 @@ const ProfileHeader = () => {
     phoneNumber: '+123 456 789',
     cabinet: 'cabinet Law For All',
     ranking: 4,
+    description:'',
+   
   };
 
   const renderStars = (ranking) => {
