@@ -18,6 +18,8 @@ function ReviewUser() {
         console.log('Rating:', rating);
         console.log('Comment:', comment);
         
+        
+        
     };
 
     return (

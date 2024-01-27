@@ -3,17 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarker, faBuilding, faPhone } from '@fortawesome/free-solid-svg-icons';
 import user1 from "../../assets/user2.png";
 import { useNavigate } from 'react-router-dom';
-const SearchResult1 = () => {
+const SearchResult = () => {
   
   const profileData = {
-    profilePicture: 'https://avocatalgerien.com/wp-content/uploads/2016/06/avocat.png',
-    firstName: 'MAITRE MOHAMMED',
-    lastName: 'SLIMANI',
+    profilePicture: 'https://avocatalgerien.com/wp-content/uploads/2015/01/avocat002.jpg',
+    firstName: 'MAITRE MOHAMED',
+    lastName: 'DIF',
     lawSpecialty: 'Droit administratif',
-    address: 'Djelfa',
-    phoneNumber: '0673707790',
-    cabinet: '-0.633738',
-    ranking: 3,
+    address: 'Hassi Bahbah 17000, Djelfa, Algérie',
+    phoneNumber: '0542296357',
+    cabinet: '3.028468',
+    ranking: 4,
   };
   const navigate = useNavigate();
   const renderStars = (ranking) => {
@@ -87,4 +87,4 @@ const goToAvocat = () => {
   );
 };
 
-export default SearchResult1;
+export default SearchResult;
