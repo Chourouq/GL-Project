@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {useNavigate} from 'react-router-dom';
 import { FaSearchLocation, FaSearch, FaHeart } from 'react-icons/fa';
 import bg from "../../assets/welcome1.svg";
 
@@ -50,13 +51,14 @@ const Welcome = () => {
         'Boumerdès', 'El Tarf', 'Tindouf', 'Tissemsilt', 'El Oued', 'Khenchela', 'Souk Ahras', 'Tipaza', 'Mila',
         'Aïn Defla', 'Naâma', 'Aïn Témouchent', 'Ghardaïa', 'Relizane'
     ];
-
+    
+    
     const [selectedWilaya, setSelectedWilaya] = useState('');
     const [selectedSpecialty, setSelectedSpecialty] = useState('');
     const [otherInput, setOtherInput] = useState('');
     const [wilayaSuggestions, setWilayaSuggestions] = useState([]);
     const [specialtySuggestions, setSpecialtySuggestions] = useState([]);
-
+    const navigate = useNavigate();
     const handleWilayaInputChange = (input) => {
         setSelectedWilaya(input);
         setWilayaSuggestions(input ? wilayas.filter((wilaya) => wilaya.toLowerCase().includes(input.toLowerCase())) : []);
@@ -82,6 +84,7 @@ const Welcome = () => {
     const handleSearch = () => {
         // back team Implement your search functionality here
         console.log('Search clicked');
+        navigate("/SearchResults");
     };
     return (
         <div className="bg-cover min-h-screen sm:rounded-b-[100px] rounded-b-[50px] px-4 sm:pt-4 pt-24 flex flex-col items-center justify-center"
@@ -139,7 +142,7 @@ const Welcome = () => {
                         type="text"
                         value={otherInput}
                         onChange={(e) => handleOtherInputChange(e.target.value)}
-                        placeholder="Autre"
+                        placeholder="Nom"
                         className="py-2 px-4 font-medium border-2 border-blue-900 rounded-full focus:outline-none focus:ring focus:border-blue-300 w-full"
                     />
                     <span className="absolute p-2 right-3 top-[6px] text-blue-900">

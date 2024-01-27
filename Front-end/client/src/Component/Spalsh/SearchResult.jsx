@@ -1,44 +1,39 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarker, faBuilding, faPhone } from '@fortawesome/free-solid-svg-icons';
-import user1 from "../../assets/user1.png";
-import EditProfile from "./EditProfile.jsx"; 
-//profile header with the update profile button
-const ProfileHeader = () => {
-  const [isEditProfileVisible, setIsEditProfileVisible] = useState(false);
-
+import user1 from "../../assets/user2.png";
+import { useNavigate } from 'react-router-dom';
+const SearchResult = () => {
+  
   const profileData = {
     profilePicture: user1,
-    firstName: 'Salim',
-    lastName: 'Laalami',
+    firstName: 'Jamal',
+    lastName: 'Lekhel',
     lawSpecialty: 'Criminal Defense',
     address: '123 Main St, Cityville',
     phoneNumber: '+123 456 789',
     cabinet: 'cabinet Law For All',
     ranking: 4,
-    description:'',
-   
   };
-
+  const navigate = useNavigate();
   const renderStars = (ranking) => {
     const stars = [];
     for (let i = 1; i <= 5; i++) {
-      stars.push(
-        <span
-          key={i}
-          className={`text-2xl ${i <= ranking ? 'text-yellow-500' : 'text-gray-300'}`}
-        >
-          ★
-        </span>
-      );
+        stars.push(
+            <span
+                key={i}
+                className={`text-2xl ${i <= ranking ? 'text-yellow-500' : 'text-gray-300'}`}
+            >
+                ★
+            </span>
+        );
     }
     return stars;
-  };
+};
 
-  const editProfile = () => {
-    setIsEditProfileVisible(true);
-  }
-
+const goToAvocat = () => {
+    navigate("/AvocatPovUser");
+};
   return (
     <div className="profile-container flex border-2 border-[#EAB84C] text-black-500 p-8 m-6 mt-16">
       {/* User Image Rectangle */}
@@ -79,23 +74,17 @@ const ProfileHeader = () => {
           <p className="text-gray-700 font-bold">{profileData.phoneNumber}</p>
         </div>
       </div>
-      {/* Button to the right of the profile container */}
-      <div className='container-buuton mt-auto ml-auto' >
+       {/* Button to the right of the profile container */}
+       <div className='container-buuton mt-auto ml-auto' >
         <div className="button container mx-2 cursor-pointer bg-blue-900 text-[16px] text-white font-bold text-center rounded-full py-4 px-4 shadow-xl hover:scale-105 "
-          onClick={editProfile}
-        >
-          Edit Profile
-        </div>
+        onClick={goToAvocat}
+       >
+        Voir Plus
+       </div>
+      
       </div>
-
-      {isEditProfileVisible && (
-        <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center z-[999] px-4">
-          <div className="bg-gray-900 bg-opacity-50 absolute inset-0"></div>
-          <EditProfile close={() => setIsEditProfileVisible(false)} />
-        </div>
-      )}
     </div>
   );
 };
 
-export default ProfileHeader;
+export default SearchResult;

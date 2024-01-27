@@ -10,7 +10,7 @@ const Appointment = ({ close }) => {
     const [selectedPeriod, setSelectedPeriod] = useState('');
     const [disabledPeriods, setDisabledPeriods] = useState([]);
 
-    const periods = ['8-10','10-12','14-16'];
+    const periods = ['8:00-9:30','10:00-11:30','13:00-14:30','15:00-16:30'];
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -36,9 +36,10 @@ const Appointment = ({ close }) => {
         setSelectedDate(date);
 
         // Example logic to disable 'Evening' if selected date is a Monday
-        const disabledPeriodsForDate = date.getDay() === 1 ? ['8-10','10-12'] : [];
+        const disabledPeriodsForDate = date.getDay() === 1||2 ? ['8:00-9:30','13:00-14:30'] :[];
         setDisabledPeriods(disabledPeriodsForDate);
         setSelectedPeriod('');
+
     };
     return (
         <div className="flex justify-center items-center w-full h-screen">
@@ -66,7 +67,7 @@ const Appointment = ({ close }) => {
                         id="date"
                         selected={selectedDate}
                         onChange={handleDateChange}
-                        filterDate={(date) => isDateDisabled(date, [1, 3])}
+                        filterDate={(date) => isDateDisabled(date, [0,1, 2,3,4])}
                         className="font-medium shadow-lg border-t-2 py-2 pl-10 pr-12 rounded-2xl"
                         placeholderText="Sélectionner une date"
                     />

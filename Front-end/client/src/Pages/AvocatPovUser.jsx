@@ -1,23 +1,23 @@
 import React from 'react';
-import NavBarLawyer from "../Component/Lawyer/NavBarLawyer.jsx";
+import NavBarUser from "../Component/User/NavBarUser.jsx";
 import Skills from "../Component/Lawyer/Skills.jsx";
-import ProfileHeader from "../Component/Lawyer/ProfileHeader.jsx";
+import ProfileHeader from "../Component/User/ProfileHeader.jsx";
 import Experiences from "../Component/Lawyer/Experiences.jsx";
 import Reviews from "../Component/Lawyer/Reviews.jsx";
 import Contact from '../Component/Lawyer/Contact.jsx';
-
-//profile avocat (access to lawyer) updating profile functionality
-
-function Avocat() {
+import ReviewUser from '../Component/User/ReviewUser.jsx'
+//profile avocat of the user (with the functionality of reservation included)
+function AvocatPovUser() {
     return (
         <div>
-            <NavBarLawyer/>
+            <NavBarUser/>
             <ProfileHeader/>
             <Skills/>
             <Experiences/>
+            <ReviewUser/>
             <Reviews/>
             <Contact/>
         </div>
     );
 }
-export default Avocat;
+export default  AvocatPovUser;
