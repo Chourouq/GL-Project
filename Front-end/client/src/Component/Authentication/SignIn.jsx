@@ -23,13 +23,11 @@ function SignIn() {
         // Check if the entered email contains specific strings
         if (enteredEmail.includes("/user")) {
             navigate('/');
-        } else if (enteredEmail.includes("/avocat")) {
-            navigate('/Avocat');
         } else if (enteredEmail.includes("/admin")) {
             navigate('/Admin');
         } else {
             // Handle other cases or show an error message
-            console.error("Invalid email format");
+            navigate('/Avocat');
         }
     };
 
