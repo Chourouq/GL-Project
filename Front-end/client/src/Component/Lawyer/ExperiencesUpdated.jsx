@@ -6,7 +6,7 @@ function ExperiencesUpdated() {
     'Expert en droit avec des connaissances approfondies.',
     'Capacité à interpréter et appliquer les lois.',
     'Compétences en plaidoyer devant les tribunaux.',
-    'Excellente recherche juridique et analyse'
+    'Excellente recherche juridique et analyse',
   ];
 
   return (
