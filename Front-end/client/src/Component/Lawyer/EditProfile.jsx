@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from "react-router-dom";
 const EditProfile = ({ close }) => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -9,7 +9,7 @@ const EditProfile = ({ close }) => {
     phoneNumber: '',
     cabinet: '',
   });
-
+  const navigate = useNavigate();
   const [currentField, setCurrentField] = useState('firstName');
 
   const handleChange = (e) => {
@@ -210,6 +210,7 @@ const EditProfile = ({ close }) => {
               <button
                 type="submit"
                 className="px-4 py-2 bg-blue-900 text-white rounded-md hover:bg-blue-700 transition duration-300"
+                onClick={()=>navigate('/AvocatUpdated')}
               >
                 Finish
               </button>

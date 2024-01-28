@@ -203,6 +203,7 @@ function SignUp() {
                         <button
                             type="submit"
                             className="cursor-pointer font-bold bg-blue-900 mt-2 text-center text-[12px] text-white w-full py-3 rounded-full px-2 duration-300 hover:scale-105"
+                            onClick={() => navigate('/Sign-in')} 
                         >
                             Inscription
                         </button>

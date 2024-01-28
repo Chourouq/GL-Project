@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 //lawyer header with the "Visiter" and "Supprimer" buttons
-const LawyerFrame = () => {
+const LawyerFrame6 = () => {
   const navigate = useNavigate();
   const profileData = {
-    profilePicture:"https://avocatalgerien.com/wp-content/uploads/2023/11/IMG-f01dc49b8ba035cb57d919727f372d14-V.jpg",
-    firstName: 'MAITRE ABDELHAFID',
-    lastName: 'SAIGHI',
-    lawSpecialty: "Droit de l'environnement",
+    profilePicture:"https://avocatalgerien.com/wp-content/uploads/2015/12/100_1788_New1_New1_New2-e1451258204561.jpg",
+    firstName: "BOUCEKKA",
+    lastName: 'AMINE',
+    lawSpecialty: "Droit administratif",
    
   };
 
@@ -62,4 +62,4 @@ const LawyerFrame = () => {
   );
 };
 
-export default LawyerFrame;
+export default LawyerFrame6;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaThList } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import User1 from "../../assets/user1.png";
+
 
 const NavbarUser = () => {
   const navigate = useNavigate();
@@ -24,7 +24,6 @@ const NavbarUser = () => {
       className={`fixed w-full bg-white left-0 top-0 z-[999] ${
         sticky ? "bg-white/60  text-gray-900" : "text-white"
       }`}
-      id="topTop"
     >
       <div className="flex items-center justify-between">
         <div className="mx-7">
@@ -65,7 +64,11 @@ const NavbarUser = () => {
             ))}
           </ul>
         </div>
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> 2650a7891a4c272ee221f2deff3a562d66b0fdf4
       </div>
     </nav>
   );

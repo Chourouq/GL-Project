@@ -64,10 +64,7 @@ const Navbar = () => {
             ))}
           </ul>
         </div>
-        <div className="hidden md:block mr-4 ml-auto">
-        <img src={User1} alt="Profile" className="w-11 h-11 rounded-full" />
-          
-        </div>
+        
       </div>
     </nav>
   );
