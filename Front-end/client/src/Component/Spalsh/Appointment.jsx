@@ -4,12 +4,13 @@ import 'react-datepicker/dist/react-datepicker.css';
 import 'tailwindcss/tailwind.css';
 import { BsCalendar, BsPerson, BsPhone, BsChat, BsClock } from 'react-icons/bs';
 import { FaTimes } from 'react-icons/fa';
+import {useNavigate} from "react-router-dom";
 
 const Appointment = ({ close }) => {
     const [selectedDate, setSelectedDate] = useState(null);
     const [selectedPeriod, setSelectedPeriod] = useState('');
     const [disabledPeriods, setDisabledPeriods] = useState([]);
-
+    const navigate = useNavigate();
     const periods = ['8:00-9:30','10:00-11:30','13:00-14:30','15:00-16:30'];
 
     const handleSubmit = (event) => {
@@ -36,7 +37,7 @@ const Appointment = ({ close }) => {
         setSelectedDate(date);
 
         // Example logic to disable 'Evening' if selected date is a Monday
-        const disabledPeriodsForDate = date.getDay() === 1||2 ? ['8:00-9:30','13:00-14:30'] :[];
+        const disabledPeriodsForDate = date.getDay() === 1 ? ['8:00-9:30','13:00-14:30'] :[];
         setDisabledPeriods(disabledPeriodsForDate);
         setSelectedPeriod('');
 
@@ -150,6 +151,7 @@ const Appointment = ({ close }) => {
                 <button
                     type="submit"
                     className="cursor-pointer font-medium bg-blue-900 text-center text-[12px] text-white rounded-full py-3 px-6 hover:scale-105"
+                    onClick={()=>navigate(0)}
                 >
                     Planifier un rendez-vous
                 </button>
