@@ -82,10 +82,22 @@ const Welcome = () => {
     };
 
     const handleSearch = () => {
-        // back team Implement your search functionality here
-        console.log('Search clicked');
-        navigate("/SearchResults");
+        // Disable the button during the delay to prevent multiple clicks
+        // You can re-enable it after the delay if needed
+        // (for simplicity, we won't re-enable it in this example)
+        document.getElementById("searchButton").disabled = true;
+
+        // Simulate a delay of 2 seconds (2000 milliseconds)
+        setTimeout(() => {
+            // Re-enable the button after the delay
+            document.getElementById("searchButton").disabled = false;
+
+            // Navigate to the search results page
+            console.log('Search clicked');
+            navigate("/SearchResults");
+        }, 3000);
     };
+
     return (
         <div className="bg-cover min-h-screen sm:rounded-b-[100px] rounded-b-[50px] px-4 sm:pt-4 pt-24 flex flex-col items-center justify-center"
              style={{ backgroundImage: `url(${bg})` }} id={'home'}>
@@ -149,7 +161,7 @@ const Welcome = () => {
                 <FaHeart />
             </span>
                 </div>
-                <button onClick={handleSearch} className="cursor-pointer font-medium bg-blue-900 text-center text-[12px] text-white rounded-full py-3 px-6 hover:scale-105">
+                <button  id="searchButton" onClick={handleSearch} className="cursor-pointer font-medium bg-blue-900 text-center text-[12px] text-white rounded-full py-3 px-6 hover:scale-105">
                     Search
                 </button>
                 </div>

@@ -114,7 +114,7 @@ const Appointment = ({ close }) => {
                         id="fullName"
                         name="fullName"
                         className="font-medium shadow-lg border-t-2 py-2 pl-10 pr-12 rounded-2xl w-full"
-                        placeholder="Nom Complet"
+                        placeholder="Email"
                     />
                 </div>
                 <div className="mb-4 w-full relative">

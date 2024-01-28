@@ -9,11 +9,9 @@ const NavbarUser = () => {
   const [open, setOpen] = useState(false);
   const menuLinks = [
     { name: "Accueil", link: "/" },
-    { name: "À propos de nous", link: "/Splash/Aboutus" },
-    { name: "Contact", link: "/Splash/contact" },
+    { name: "Contact", link: "#contact"},
     { name: "Log out", link: "/" },
   ];
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       document.querySelector("nav");
@@ -67,10 +65,7 @@ const NavbarUser = () => {
             ))}
           </ul>
         </div>
-        <div className="hidden md:block mr-4">
-        <img src={User1} alt="Profile" className="w-11 h-11 rounded-full" />
-          
-        </div>
+
       </div>
     </nav>
   );
