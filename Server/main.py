@@ -8,7 +8,10 @@ from typing import List
 from tortoise.contrib.fastapi import register_tortoise
 from typing import List
 from fastapi import Cookie, Depends
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, HTTPException, Request, Response
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 app = FastAPI()
@@ -113,7 +116,7 @@ class UserLoginRequest(BaseModel):
 
 
 @app.post("/login")
-def login_user(user_data: UserLoginRequest):
+def login_user(user_data: UserLoginRequest, response: Response):
     email = user_data.email
     password = user_data.password
 
@@ -122,14 +125,18 @@ def login_user(user_data: UserLoginRequest):
         user = cursor.fetchone()
         if not user:
             raise HTTPException(status_code=404, detail="User not found")
-
+        print(email)
         stored_hashed_password = user["password"].encode("utf-8")
         entered_password = password.encode("utf-8")
 
         if bcrypt.checkpw(entered_password, stored_hashed_password):
-            return {"message": "Login successful"}
+         # Include user ID in the response data
+            user_id = user["id"]
+            response.set_cookie(key= "user_id", value= str(user_id), secure=True, httponly=True, samesite="None")
+            return {"message": "Login successful", "user_id": user_id}
         else:
             raise HTTPException(status_code=401, detail="Invalid credentials")
+        
         
 
 class CookieDeleter:
@@ -184,46 +191,49 @@ class AvocatProfile(BaseModel):
     specialities: List[str]
 
 
-@app.get("/avocat/{avocat_id}", response_model=AvocatProfile)
-def get_avocat_profile(avocat_id: int, current_user: int = Depends(get_current_user)):
 
-    if not current_user:
-        raise HTTPException(status_code=401, detail="User not authenticated")
-    # Fetch avocat profile information from the database based on avocat_id
-    # You need to implement this query based on your database structure
-    with db.cursor() as cursor:
-        cursor.execute("""
-            SELECT a.nom, a.email, a.phone, a.website, a.description, l.lat, l.lng, l.address
-            FROM avocat a
-            LEFT JOIN location l ON a.id = l.avocatID
-            WHERE a.id = %s
-        """, (avocat_id,))
-        avocat_data = cursor.fetchone()
+@app.get("/avocat/{avocatId}", response_model=AvocatProfile)
+def get_avocat_profile(avocatId: int, current_user: int = Depends(get_current_user)):
+    try:
+        if not current_user:
+            raise HTTPException(status_code=401, detail="User not authenticated")
 
-        if not avocat_data:
-            raise HTTPException(status_code=404, detail="Avocat not found")
+        with db.cursor() as cursor:
+            cursor.execute("""
+                SELECT a.nom, a.email, a.phone, a.website, a.description, l.lat, l.lng, l.address
+                FROM avocat a
+                LEFT JOIN location l ON a.id = l.avocatID
+                WHERE a.id = %s
+            """, (avocatId,))
+            avocat_data = cursor.fetchone()
 
-        # Fetch specialities for the avocat
-        cursor.execute("""
-            SELECT s.nomSpecialite
-            FROM specialite s
-            INNER JOIN avocatSpecialite a ON s.specialiteID = a.specialiteID
-            WHERE a.avocatID = %s
-        """, (avocat_id,))
-        specialities = [item['nomSpecialite'] for item in cursor.fetchall()]
+            if not avocat_data:
+                raise HTTPException(status_code=404, detail="Avocat not found")
 
-    # Prepare the response model
-    avocat_profile = AvocatProfile(
-        nom=avocat_data['nom'],
-        email=avocat_data['email'],
-        phone=avocat_data['phone'],
-        website=avocat_data['website'],
-        description=avocat_data['description'],
-        address=avocat_data['address'],
-        specialities=specialities,
-    )
+            cursor.execute("""
+                SELECT s.nomSpecialite
+                FROM specialite s
+                INNER JOIN avocatSpecialite a ON s.specialiteID = a.specialiteID
+                WHERE a.avocatID = %s
+            """, (avocatId,))
+            specialities = [item['nomSpecialite'] for item in cursor.fetchall()]
 
-    return avocat_profile
+        # Provide default values for potential None values
+        avocat_profile = AvocatProfile(
+            nom=avocat_data['nom'],
+            email=avocat_data['email'],
+            phone=avocat_data.get('phone', ''),  # Use empty string if None
+            website=avocat_data.get('website', ''),  # Use empty string if None
+            description=avocat_data.get('description', ''),  # Use empty string if None
+            address=avocat_data['address'],
+            specialities=specialities,
+        )
+
+        return avocat_profile
+    except Exception as e:
+        logger.error(f"An error occurred: {str(e)}")
+        raise HTTPException(status_code=500, detail="Internal Server Error")
+
 async def get_current_user(user_id: int = Cookie(None)):
     credentials_exception = HTTPException(
         status_code=401,

@@ -26,11 +26,11 @@ function SignIn() {
         setShowPassword(!showPassword);
     };
 
-};
+
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
-
+    };
 
     const handleSignIn = async (e) => {
         e.preventDefault();
