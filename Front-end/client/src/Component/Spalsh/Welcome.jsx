@@ -95,7 +95,7 @@ const Welcome = () => {
             // Navigate to the search results page
             console.log('Search clicked');
             navigate("/SearchResults");
-        }, 3000);
+        }, 1500);
     };
 
     return (

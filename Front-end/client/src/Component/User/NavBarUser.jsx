@@ -10,7 +10,7 @@ const NavbarUser = () => {
   const menuLinks = [
     { name: "Accueil", link: "/" },
     { name: "Contact", link: "#contact"},
-    { name: "Log out", link: "/" },
+
   ];
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -65,9 +65,6 @@ const NavbarUser = () => {
           </ul>
         </div>
 
-
-
-        
 
       </div>
     </nav>

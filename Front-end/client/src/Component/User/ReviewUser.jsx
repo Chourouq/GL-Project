@@ -29,9 +29,7 @@ function ReviewUser() {
         console.log('Name:', name);
         console.log('Email:', email);
         console.log('Rating:', rating);
-        console.log('Comment:', comment);
-
-         };
+        console.log('Comment:', comment);};
 
     return (
         <div className="bg-white p-4 mb-4 rounded-md shadow-md">

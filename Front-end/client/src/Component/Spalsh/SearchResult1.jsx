@@ -8,11 +8,11 @@ const SearchResult = () => {
   const profileData = {
     profilePicture: 'https://avocatalgerien.com/wp-content/uploads/2015/01/avocat002.jpg',
     firstName: 'MAITRE MOHAMED',
-    lastName: 'DIF',
+    lastName: '',
     lawSpecialty: 'Droit administratif',
-    address: 'Hassi Bahbah 17000, Djelfa, Algérie',
-    phoneNumber: '0542296357',
-    cabinet: '3.028468',
+    address: '06 rue du moulin,Djelfa,Algerie',
+    phoneNumber: '0770831682',
+    cabinet: '35.740700',
     ranking: 4,
   };
   const navigate = useNavigate();
