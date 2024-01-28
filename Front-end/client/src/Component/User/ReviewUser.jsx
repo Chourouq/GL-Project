@@ -30,13 +30,8 @@ function ReviewUser() {
         console.log('Email:', email);
         console.log('Rating:', rating);
         console.log('Comment:', comment);
-<<<<<<< HEAD
-=======
-        
-        
-        
->>>>>>> 2650a7891a4c272ee221f2deff3a562d66b0fdf4
-    };
+
+         };
 
     return (
         <div className="bg-white p-4 mb-4 rounded-md shadow-md">

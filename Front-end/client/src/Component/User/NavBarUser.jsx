@@ -64,11 +64,11 @@ const NavbarUser = () => {
             ))}
           </ul>
         </div>
-<<<<<<< HEAD
 
-=======
+
+
         
->>>>>>> 2650a7891a4c272ee221f2deff3a562d66b0fdf4
+
       </div>
     </nav>
   );
