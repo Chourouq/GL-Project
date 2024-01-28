@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaThList } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import User1 from "../../assets/user1.png";
+
 
 const NavbarUser = () => {
   const navigate = useNavigate();
@@ -66,10 +66,7 @@ const NavbarUser = () => {
             ))}
           </ul>
         </div>
-        <div className="hidden md:block mr-4">
-        <img src={User1} alt="Profile" className="w-11 h-11 rounded-full" />
-          
-        </div>
+        
       </div>
     </nav>
   );

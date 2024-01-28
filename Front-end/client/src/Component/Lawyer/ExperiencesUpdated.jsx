@@ -1,9 +1,12 @@
 import React from 'react';
 
-function Experiences() {
+function ExperiencesUpdated() {
   
   const experiences = [
- 
+    'Expert en droit avec des connaissances approfondies.',
+    'Capacité à interpréter et appliquer les lois.',
+    'Compétences en plaidoyer devant les tribunaux.',
+    'Excellente recherche juridique et analyse'
   ];
 
   return (
@@ -20,4 +23,4 @@ function Experiences() {
   );
 }
 
-export default Experiences;
+export default ExperiencesUpdated;

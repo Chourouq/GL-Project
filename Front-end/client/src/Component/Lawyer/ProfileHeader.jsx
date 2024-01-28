@@ -8,15 +8,15 @@ const ProfileHeader = () => {
   const [isEditProfileVisible, setIsEditProfileVisible] = useState(false);
 
   const profileData = {
-    profilePicture: user1,
-    firstName: 'Salim',
-    lastName: 'Laalami',
-    lawSpecialty: 'Criminal Defense',
-    address: '123 Main St, Cityville',
-    phoneNumber: '+123 456 789',
-    cabinet: 'cabinet Law For All',
-    ranking: 4,
-    description:'',
+    profilePicture: "https://avocatalgerien.com/wp-content/uploads/2016/12/photo-8.jpg",
+    firstName: 'MAITRE AZRI',
+    lastName: 'LOUNIS',
+    lawSpecialty: 'Droit bancaire',
+    address: "04 Rue Khelifa Boukhalefa Alger centre 16000 Algérie",
+    phoneNumber: "0774599503",
+    cabinet: '36.766362',
+    ranking: 2,
+    description:'L’enracinement local, le positionnement unique et l’expertise reconnue permettent au cabinet AZRI AVOCATS de fournir des solutions innovantes',
    
   };
 
