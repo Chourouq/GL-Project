@@ -1,5 +1,5 @@
 # DZ-Mouhami: Web Directory for Lawyers in Algeria
-
+![Homesection Image](./Homesection.png)
 ## 🌟 Project Description
 
 In the current era of digital transformation, the way we access information and services has undergone a radical change. **DZ-Mouhami** is an innovative web directory tailored specifically for lawyers in Algeria. This project aims to bridge the gap between legal professionals and their clients, fostering seamless interaction and accessibility.
