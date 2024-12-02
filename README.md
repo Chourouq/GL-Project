@@ -69,7 +69,7 @@ cd GL-Project
 ```bash
 
 # Navigate to the frontend directory
-cd frontend
+cd front-end
 
 # Install the dependencies
 npm install
@@ -80,7 +80,7 @@ npm start
 ### **3. Set Up the Back-End**
 ```bash
 # Navigate to the backend directory
-cd ../backend
+cd ../Server
 
 # (Optional) Create and activate a virtual environment
 python -m venv venv
