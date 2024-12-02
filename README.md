@@ -47,7 +47,7 @@ The project is documented in four key chapters:
 
 ## 📄 Project Resources
 
-- [📘 Full Project Report (PDF)]([./GL_Project.pdf](https://github.com/Chourouq/GL-Project/blob/ef0f92548e330f48964723fac83f1f36602db315/GL_Project%20.pdf))
+- [📘 Full Project Report (PDF)](GL_Project .pdf)
 - [📂 Presentation (ZIP)](./path-to-presentation.zip)  
 
 ---
