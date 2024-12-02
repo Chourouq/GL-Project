@@ -47,17 +47,70 @@ The project is documented in four key chapters:
 
 ## 📄 Project Resources
 - [📘 Full Project Report (PDF)](./GL_Project.pdf)
-  **Note:** The project report is too large to be rendered directly on GitHub.so click the download it.
+###
+  **Note:** The project report is too large to be rendered directly on GitHub,so click to download it.
 
-- [📂 Presentation (ZIP)](./path-to-presentation.zip)  
 
 ---
 
 ## 🚀 How to Run the Project
 
-### **Back-End**
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/dz-mouhami.git
-   cd dz-mouhami/backend
+To run the **GL-Project** locally, follow these steps:
+
+### **1. Clone the Repository**
+
+First, clone the repository to your local machine:
+
+```bash
+
+# Clone the repository
+git clone https://github.com/Chourouq/GL-Project.git
+cd GL-Project
+```
+### **2. Set Up the Front-End**
+```bash
+
+# Navigate to the frontend directory
+cd frontend
+
+# Install the dependencies
+npm install
+
+# Start the development server
+npm start
+```
+### **3. Set Up the Back-End**
+```bash
+# Navigate to the backend directory
+cd ../backend
+
+# (Optional) Create and activate a virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+
+# Install the dependencies
+pip install -r requirements.txt
+
+# Start the FastAPI server
+uvicorn main:app --reload
+
+```
+### **4. Access the Application**
+
+After setting up the front-end and back-end, access the application as follows:
+
+- **Front-End**: Open your browser and navigate to [http://localhost:3000](http://localhost:3000).
+- **Back-End**: Access the FastAPI API documentation at [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs).
+
+---
+
+## 📞 Contact
+
+For any inquiries or collaboration, feel free to reach out to me:
+
+- **Email**: batiche.chourouq@gmail.com
+- **LinkedIn**: [Chourouq Batiche](https://www.linkedin.com/in/chourouq-batiche-bb8a2a334/)
+
+I look forward to hearing from you!
+
 
