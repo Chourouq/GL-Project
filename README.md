@@ -47,7 +47,7 @@ The project is documented in four key chapters:
 
 ## 📄 Project Resources
 
-- [📘 Full Project Report (PDF)](GL_Project .pdf)  
+- [📘 Full Project Report (PDF)](./GL_Project.pdf)
 - [📂 Presentation (ZIP)](./path-to-presentation.zip)  
 
 ---
