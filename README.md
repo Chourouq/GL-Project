@@ -17,6 +17,12 @@ The project is documented in four key chapters:
 4. **Chapter 04**: General Conclusion  
 
 ---
+## 📄 Project Resources
+- [📘 Full Project Report (PDF)](./GL_Project.pdf)
+###
+  **Note:** The project report is too large to be rendered directly on GitHub,so click to download it.
+  
+---
 
 ## 🛠️ Technologies Used
 
@@ -42,14 +48,6 @@ The project is documented in four key chapters:
 
 - **Build Tool**: Vite  
   Vite offers a fast and optimized development environment with instant server startup and efficient hot module replacement (HMR).  
-
----
-
-## 📄 Project Resources
-- [📘 Full Project Report (PDF)](./GL_Project.pdf)
-###
-  **Note:** The project report is too large to be rendered directly on GitHub,so click to download it.
-
 
 ---
 
